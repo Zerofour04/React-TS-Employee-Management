@@ -16,17 +16,10 @@ import Page from './component/page';
 
 const App = () => {
 
-
   // @ts-ignore
   const ErrorComponent = (error:any) => {
     return <p>An Error Occurred: {error.error}</p>;
   }
-
-
-
-
-
-
 
   return (
     <MsalAuthenticationTemplate
