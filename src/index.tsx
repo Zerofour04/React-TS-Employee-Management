@@ -1,17 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import {PublicClientApplication} from "@azure/msal-browser";
+import {msalConfiguration} from "./config/msalConfig";
+import {Provider} from "react-redux";
+import store from "./store";
+import App from "./App";
+import React from "react";
+import {MsalProvider} from "@azure/msal-react";
+import ReactDOM from "react-dom";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+const pca = new PublicClientApplication(msalConfiguration);
+
+const ProjectsApp = () => (
+        <React.StrictMode>
+            <Provider store={store}>
+                <MsalProvider instance={pca}>
+                    <App/>
+                </MsalProvider>
+            </Provider>
+        </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+ReactDOM.render(<ProjectsApp/>, document.getElementById("root"));
+
+declare global {
+    interface Window {
+        _env_?: { [key: string]: string }
+        _config_?: { [key: string]: string }
+    }
+}
+
