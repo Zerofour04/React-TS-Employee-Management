@@ -6,6 +6,7 @@ import App from "./App";
 import React from "react";
 import {MsalProvider} from "@azure/msal-react";
 import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
 
 const pca = new PublicClientApplication(msalConfiguration);
 
@@ -13,7 +14,9 @@ const ProjectsApp = () => (
         <React.StrictMode>
             <Provider store={store}>
                 <MsalProvider instance={pca}>
-                    <App/>
+                    <BrowserRouter>
+                    <App/>           
+                    </BrowserRouter>
                 </MsalProvider>
             </Provider>
         </React.StrictMode>
