@@ -9,8 +9,6 @@ import { Button, Container, Nav, Navbar, NavbarBrand, NavDropdown } from 'react-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useSelector } from 'react-redux';
 import { selectLoggedInUser } from './store/employee/employeeSelectors';
-import Input from './component/projects/input';
-import ProjectList from './component/projects/list';
 import Page from './component/page';
 
 
@@ -26,6 +24,7 @@ const App = () => {
       interactionType={InteractionType.Redirect}
       authenticationRequest={authRequest}
       errorComponent={ErrorComponent}>
+        <Header/>
         <Page/>
     </MsalAuthenticationTemplate>
   );
