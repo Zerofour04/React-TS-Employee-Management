@@ -1,36 +1,43 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import './Sidebar.css'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAnglesLeft, faTimes, faUser } from '@fortawesome/free-solid-svg-icons';
 import { SidebarData } from "./SidebarData";
 import { IconContext } from "react-icons";
 import { Link } from "react-router-dom";
-import * as FaIcons from "react-icons/fa"; //Now i get access to all the icons
 import * as AiIcons from "react-icons/ai";
-import { Button } from 'react-bootstrap';
-
-
+import { slide as Menu } from "react-burger-menu"
 
 const Sidebar = (props: any) => {
 
     const [sidebar, setSidebar] = useState(false);
-    const [isOpen, setOpen] = useState(true)
+/*     const [isOpen, setOpen] = useState(true) */
     const showSidebar = () => setSidebar(!sidebar);
     return (
         <>
+            <Menu {...props}>
+                <a className="menu-item" href="/">
+                    Home
+                </a>
+
+                <a className="menu-item" href="#employees">
+                    Employees
+                </a>
+
+                <a className="menu-item" href="#server">
+                    Server
+                </a>
+            </Menu>
             <IconContext.Provider value={{ color: "#FFF" }}>
-                <div className="navbar">
+{/*                 <div className="navbar">
                     <Link to="#" className="menu-bars">
-                        <Button onClick={showSidebar}>Sidebar</Button>
 
                         <div className="actions">
                             <div className={'caret' + (isOpen ? '' : ' open')}>
-                                <FontAwesomeIcon className="icon" onClick={() => {setOpen(!isOpen); showSidebar()}} icon={faAnglesLeft}/>
+                                <FontAwesomeIcon className="icon" onClick={() => { setOpen(!isOpen); showSidebar() }} icon={faAnglesLeft} />
                             </div>
                         </div>
-                        
+
                     </Link>
-                </div>
+                </div> */}
                 <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
                     <ul className="nav-menu-items" onClick={showSidebar}>
                         <li className="navbar-toggle">
@@ -38,6 +45,8 @@ const Sidebar = (props: any) => {
                                 <AiIcons.AiOutlineClose />
                             </Link>
                         </li>
+
+
 
                         {SidebarData.map((item, index) => {
                             return (

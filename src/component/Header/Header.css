@@ -1,6 +1,13 @@
+.title {
+  top: 15px;
+  left: 100px;
+}
+
 .menu-container {
-    position: relative;
     display: flex;
+    position: absolute;
+    top: 17px;
+    right: 10px;
     justify-content: center;
     align-items: center;
   }
@@ -40,7 +47,7 @@
     border-radius: 8px;
     position: absolute;
     top: 60px;
-    right: 0;
+    right: 0px;
     width: 300px;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
     opacity: 0;
@@ -62,6 +69,7 @@
   }
   
   .menu li {
+    cursor: pointer;
     border-bottom: 1px solid #dddddd;
   }
   
