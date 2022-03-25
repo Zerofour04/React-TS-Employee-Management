@@ -5,8 +5,11 @@ import { authRequest } from "./config/msalConfig";
 import Header from './component/Header';
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import headerLogo from './pictures/logo-dialogdata.png'
+
+import "./App.css";
 import { Button, Container, Nav, Navbar, NavbarBrand, NavDropdown } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 import { useSelector } from 'react-redux';
 import { selectLoggedInUser } from './store/employee/employeeSelectors';
 import Page from './component/page';
