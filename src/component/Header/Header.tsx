@@ -1,22 +1,21 @@
 
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
-import { selectLoggedInUser } from '../store/employee/employeeSelectors';
+import { selectLoggedInUser } from '../../store/employee/employeeSelectors';
 import { useMsal } from '@azure/msal-react';
 import { Route, Routes } from "react-router-dom";
 import headerLogo from ''
 import Avatar from '@mui/material/Avatar';
-import DropDownMenu from './Dropdown';
 import React, { useState, useRef } from "react";
 import { useDetectOutsideClick } from './DropdownDetectOutside';
 import { ClassNames } from '@emotion/react';
-import "../App.css";
+import "./Header.css";
 
 const Header = () => {
 
   const msal = useMsal()
   console.log(msal)
-  // @ts-ignore
+ 
   const employee = useSelector(selectLoggedInUser)
   const { instance, accounts } = useMsal();
 
@@ -63,7 +62,7 @@ const Header = () => {
               <nav ref={dropdownRef} className={`menu ${isActive ? 'active' : 'inactive'}`}>
                 <ul>
                   <li><a onClick={logOutHandler}>Log Out</a></li>
-                  <li><a href="https://dialogdata.de/">Hompage</a></li>
+                  <li><a href="">Hompage</a></li>
                 </ul>
               </nav>
             </div>
