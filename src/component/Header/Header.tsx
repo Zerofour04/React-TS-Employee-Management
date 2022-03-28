@@ -7,9 +7,8 @@ import { useDetectOutsideClick } from './DropdownDetectOutside';
 import "./Header.css";
 
 const Header = () => {
+  
   const msal = useMsal()
-  console.log(msal)
-
   const { instance, accounts } = useMsal();
 
   const logOutHandler = () => {
@@ -42,12 +41,12 @@ const Header = () => {
             <div className="menu-container">
               <button onClick={onClick} className="menu-trigger">
                 <span>{msal.accounts[0]?.name}</span>
-                <img src="https://picute.jpg" alt="User avatar" />
+                <img src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/df/df7789f313571604c0e4fb82154f7ee93d9989c6.jpg" alt="User avatar" />
               </button>
               <nav ref={dropdownRef} className={`menu ${isActive ? 'active' : 'inactive'}`}>
                 <ul>
                   <li><a onClick={logOutHandler}>Log Out</a></li>
-                  <li><a href="http://whatthecommit.com">Hompage</a></li>
+                  <li><a href="https://dialogdata.de/">Hompage</a></li>
                 </ul>
               </nav>
             </div>

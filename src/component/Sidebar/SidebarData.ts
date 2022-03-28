@@ -13,7 +13,7 @@ export const SidebarData = [
 
     },
     {
-      title: "Server",
+      title: "sfdsfs",
       path: "/server",
       cName: "nav-text",
       icon: "fa-house"
