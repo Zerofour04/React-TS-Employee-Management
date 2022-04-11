@@ -1,7 +1,7 @@
 
 import { Container, Navbar } from 'react-bootstrap';
 import { useMsal } from '@azure/msal-react';
-import headerLogo from ''
+import headerLogo from './react-logo.png'
 import { useRef } from "react";
 import { useDetectOutsideClick } from './DropdownDetectOutside';
 import "./Header.css";
@@ -29,7 +29,7 @@ const Header = () => {
         <Container>
           <Navbar.Brand>
             <div className='title'>
-              <img src={headerLogo} className="App-logo" alt="logo" width={150} />
+              <img src={headerLogo} className="App-logo" alt="logo" width={100} />
               <>DDHub Administration</>
             </div>
           </Navbar.Brand>
