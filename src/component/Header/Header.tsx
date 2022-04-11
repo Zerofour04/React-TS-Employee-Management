@@ -46,7 +46,7 @@ const Header = () => {
               <nav ref={dropdownRef} className={`menu ${isActive ? 'active' : 'inactive'}`}>
                 <ul>
                   <li><a onClick={logOutHandler}>Log Out</a></li>
-                  <li><a href="https://dialogdata.de/">Hompage</a></li>
+                  <li><a href="">Hompage</a></li>
                 </ul>
               </nav>
             </div>
