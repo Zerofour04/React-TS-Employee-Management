@@ -1,34 +1,39 @@
-import {PublicClientApplication} from "@azure/msal-browser";
-import {msalConfiguration} from "./config/msalConfig";
-import {Provider} from "react-redux";
+import { PublicClientApplication } from "@azure/msal-browser";
+import { msalConfiguration } from "./config/msalConfig";
+import { Provider } from "react-redux";
 import store from "./store";
 import App from "./App";
 import React from "react";
-import {MsalProvider} from "@azure/msal-react";
+import { MsalProvider } from "@azure/msal-react";
 import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
 const pca = new PublicClientApplication(msalConfiguration);
-
 const ProjectsApp = () => (
-        <React.StrictMode>
-            <Provider store={store}>
-                <MsalProvider instance={pca}>
-                    <BrowserRouter>
-                    <App/>           
-                    </BrowserRouter>
-                </MsalProvider>
-            </Provider>
-        </React.StrictMode>
+    <React.StrictMode>
+        <Provider store={store}>
+            <MsalProvider instance={pca}>
+                <Router>
+                    <App />
+                </Router>
+            </MsalProvider>
+        </Provider>
+    </React.StrictMode>
 );
 
 
-ReactDOM.render(<ProjectsApp/>, document.getElementById("root"));
+
+ReactDOM.render(<ProjectsApp />, document.getElementById("root"));
 
 declare global {
+
     interface Window {
+
         _env_?: { [key: string]: string }
+
         _config_?: { [key: string]: string }
+
     }
+
 }
 

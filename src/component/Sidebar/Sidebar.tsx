@@ -1,8 +1,10 @@
 import './Sidebar.css'
 import { slide as Menu } from "react-burger-menu"
 
+
+
 const Sidebar = (props: any) => {
-    
+
     return (
         <>
             <Menu {...props}>
@@ -10,7 +12,7 @@ const Sidebar = (props: any) => {
                     Home
                 </a>
 
-                <a className="menu-item" href="#employees">
+                <a className="menu-item" href="/employees">
                     Employees
                 </a>
 
@@ -18,7 +20,9 @@ const Sidebar = (props: any) => {
                     Server
                 </a>
             </Menu>
+
         </>
+
     );
 };
 

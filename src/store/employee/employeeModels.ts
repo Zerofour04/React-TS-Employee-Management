@@ -1,10 +1,9 @@
 import {RequestState} from '../request/requestStateModels';
 
 export interface EmployeeState {
-    requestState: RequestState,
+    requestState: RequestState;
     employees: Employee[];
-    loggedInUser?: Employee;
-    initialized: boolean;
+    selectedEmployee?: Employee;
 }
 
 export interface Employee {

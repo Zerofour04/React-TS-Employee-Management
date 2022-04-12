@@ -1,7 +1,7 @@
 
 import { Container, Navbar } from 'react-bootstrap';
 import { useMsal } from '@azure/msal-react';
-import headerLogo from './react-logo.png'
+import headerLogo from '../pictures/React-logo.png'
 import { useRef } from "react";
 import { useDetectOutsideClick } from './DropdownDetectOutside';
 import "./Header.css";
@@ -29,7 +29,7 @@ const Header = () => {
         <Container>
           <Navbar.Brand>
             <div className='title'>
-              <img src={headerLogo} className="App-logo" alt="logo" width={100} />
+              <img src={headerLogo} className="App-logo" alt="logo" width={150} />
               <>DDHub Administration</>
             </div>
           </Navbar.Brand>
@@ -46,7 +46,7 @@ const Header = () => {
               <nav ref={dropdownRef} className={`menu ${isActive ? 'active' : 'inactive'}`}>
                 <ul>
                   <li><a onClick={logOutHandler}>Log Out</a></li>
-                  <li><a href="">Hompage</a></li>
+                  <li><a href="https://dialogdata.de/">Hompage</a></li>
                 </ul>
               </nav>
             </div>

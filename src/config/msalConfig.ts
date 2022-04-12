@@ -10,7 +10,3 @@ export const msalConfiguration: Configuration = {
 export const authRequest = {
     scopes: ['openid', 'profile']
 };
-
-export  const loginRequest = {
-    scopes: ["User.Read"]
-};

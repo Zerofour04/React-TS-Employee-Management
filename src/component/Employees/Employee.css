@@ -1,0 +1,62 @@
+.employee-view {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+} 
+
+.employees {
+    overflow-y: auto;
+    border: 1px solid rgb(0, 0, 0);
+    padding: 10px 5px;
+} 
+
+.employee-details {
+    background: #f3f3f3;
+    width: 100%;
+    padding: 20px 50px;
+    border: 1px solid black;
+}
+
+.employee-header {
+    display: flex;
+
+    margin-bottom: 30px;
+}
+Í 
+.flags {
+    display: flex;
+    font-size: 25px;
+    margin-top: 7px;
+} 
+
+.flag {
+    margin-left: 20px;
+}
+
+input {
+    max-width: 100%;
+}
+
+.attribute {
+    font-size: 20px;
+    display: flex;
+}
+
+.label {
+    width: 100px;
+}
+
+.usergroups {
+    display: flex;
+    margin-top: 50px;
+}
+
+.groups {
+    min-width: 15%;
+    height: 250px;
+}
+
+.list-group-item {
+    user-select: none;
+}

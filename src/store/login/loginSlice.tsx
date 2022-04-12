@@ -1,21 +1,20 @@
 import {createSlice} from '@reduxjs/toolkit';
-import {EmployeeState} from './employeeModels';
+import {LoginState} from './loginModels';
 
 
-const initialState: EmployeeState = {
-    employees: [],
+const initialState: LoginState = {
     requestState: {
         isLoading: false,
         errorMessage: null
     }
 };
 
-const employeeSlice = createSlice({
-    name: 'employees',
+const loginSlice = createSlice({
+    name: 'login',
     initialState: initialState,
     reducers: {
-        setInitialData(state, action) {
-            state.employees = action.payload;
+        setLoggedInUser(state, action) {
+            state.loggedInUser = action.payload;
         },
         setLoading(state, action) {
             state.requestState.isLoading = action.payload;
@@ -23,12 +22,9 @@ const employeeSlice = createSlice({
         setErrorMessage(state, action) {
             state.requestState.errorMessage = action.payload;
         },
-        setSelectedEmployee(state, action) {
-            state.selectedEmployee = action.payload;
-        },
     }
 });
 
-export default employeeSlice;
+export default loginSlice;
 
 
