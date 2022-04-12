@@ -3,9 +3,30 @@
   left: 100px;
 }
 
+.header-navbar {
+  width: 100%;
+  top: 0;
+}
+
+
+.user-avatar {
+  width: 30px;
+  height: 30px;
+  
+  line-height: 500px;
+  border-radius: 50%;
+  font-size: 50px;
+  color: #fff;
+  text-align: center;
+  background: rgb(165, 165, 165)
+}
+
+.user-avatar-acronym {
+  font-size: 25%;
+}
+
 .menu-container {
     display: flex;
-    position: absolute;
     top: 17px;
     right: 10px;
     justify-content: center;

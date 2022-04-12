@@ -1,12 +1,22 @@
-
 import { Container, Navbar } from 'react-bootstrap';
 import { useMsal } from '@azure/msal-react';
 import headerLogo from '../pictures/React-logo.png'
 import { useRef } from "react";
 import { useDetectOutsideClick } from './DropdownDetectOutside';
 import "./Header.css";
+import { useWebservice } from '../../hooks/useWebservice';
+import { getUserRoles } from '../../store/userroles/userRoleActions';
+import { useSelector } from 'react-redux';
+import { selectUserRoles } from '../../store/userroles/userRoleSelectors';
+import { selectSelectedEmployee } from '../../store/employee/employeeSelectors';
+import { Avatar } from '@mui/material';
 
 const Header = () => {
+
+  useWebservice(true, getUserRoles)
+  const userRoles = useSelector(selectUserRoles)
+
+  const employee = useSelector(selectSelectedEmployee)
   
   const msal = useMsal()
   const { instance, accounts } = useMsal();
@@ -25,9 +35,9 @@ const Header = () => {
 
   return (
     <div>
-      <Navbar bg="light" expand="lg">
-        <Container>
-          <Navbar.Brand>
+      <Navbar bg="light" expand="lg" className='header-navbar'>
+        <Container className="header-fix">
+          <Navbar.Brand >
             <div className='title'>
               <img src={headerLogo} className="App-logo" alt="logo" width={150} />
               <>DDHub Administration</>
@@ -41,7 +51,9 @@ const Header = () => {
             <div className="menu-container">
               <button onClick={onClick} className="menu-trigger">
                 <span>{msal.accounts[0]?.name}</span>
-                <img src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/df/df7789f313571604c0e4fb82154f7ee93d9989c6.jpg" alt="User avatar" />
+                <div className="user-avatar">
+                  <h4 className='user-avatar-acronym'>{employee?.acronym}</h4>
+                </div>
               </button>
               <nav ref={dropdownRef} className={`menu ${isActive ? 'active' : 'inactive'}`}>
                 <ul>

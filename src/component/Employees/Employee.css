@@ -59,4 +59,6 @@ input {
 
 .list-group-item {
     user-select: none;
+    cursor: pointer;
+    
 }
