@@ -52,7 +52,6 @@ const Header = () => {
               <button onClick={onClick} className="menu-trigger">
                 <span>{msal.accounts[0]?.name}</span>
                 <div className="user-avatar">
-                  <h4 className='user-avatar-acronym'>{employee?.acronym}</h4>
                 </div>
               </button>
               <nav ref={dropdownRef} className={`menu ${isActive ? 'active' : 'inactive'}`}>

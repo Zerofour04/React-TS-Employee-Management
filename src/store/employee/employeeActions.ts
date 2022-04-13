@@ -32,6 +32,31 @@ export const loadEmployees = (headers: any) => {
     }
 ;
 
+export const loadEmployee = (headers: any, email: string) => {
+    return async (dispatch: any) => {
+        const fetchEmployee = async () => {
+            return await axios.get(
+                `${window._env_?.EMPLOYEE_SERVICE_EXTERNAL_URL}/api/v1/employees/${email}`,
+                {
+                    headers: headers
+                });
+        };
+
+        dispatch(employeeActions.setLoading(true));
+        try {
+            const employeeResponse = await fetchEmployee();
+            const employee: Employee = employeeResponse.data;
+            employee.displayName = concatEmployeeNameAndAcronym(employee.fullName, employee.acronym);
+            dispatch(employeeActions.setEmployee(employee));
+        } catch (error: any) {
+            dispatch(employeeActions.setErrorMessage(`Employees: ${error.message}`));
+        } finally {
+            dispatch(employeeActions.setLoading(false));
+        }
+    };
+}
+;
+
 function concatEmployeeNameAndAcronym(fullName: string | null, acronym: string | null) {
     const name = fullName ? fullName : 'Unnamed';
     return acronym ? name.concat(' (').concat(acronym).concat(')') : name;

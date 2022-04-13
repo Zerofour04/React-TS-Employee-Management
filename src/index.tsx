@@ -21,6 +21,8 @@ const ProjectsApp = () => (
     </React.StrictMode>
 );
 
+
+
 ReactDOM.render(<ProjectsApp />, document.getElementById("root"));
 
 declare global {

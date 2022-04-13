@@ -27,6 +27,8 @@ const EmployeeList = (props:any) => {
             return el;
         } else {
             return el.acronym.toLowerCase().includes(props.input)
+            || el.fullName?.toLowerCase().includes(props.input)
+            || el.email?.toLowerCase().includes(props.input)
         }
     })
 

@@ -11,3 +11,12 @@ export const selectLoginErrorMessage = (state: RootState): string | null => {
 export const selectUserRoles = (state: RootState): string[] => {
     return state.userRoleState.userRoles;
 }
+
+export const setUserRoles = (state: RootState): string[] => {
+    return state.userRoleState.userRoles;
+}
+
+export const removeUserRole = (state: RootState): string[] => {
+    return state.userRoleState.userRoles;
+}
+
