@@ -18,4 +18,7 @@ export interface Employee {
         regionIsocode: string
     };
     displayName: string;
+    active: boolean;
+    locked: boolean;
+    visible: boolean;
 }

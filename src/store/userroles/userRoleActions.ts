@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { loadEmployee } from '../employee/employeeActions';
-import {  userRoleActions } from '../index';
+import { userRoleActions } from '../index';
 
 export const getUserRoles = (headers: any) => {
     return async (dispatch: any) => {
@@ -24,7 +24,6 @@ export const getUserRoles = (headers: any) => {
     };
 };
 
-
 export const setUserRoles = (headers: any) => {
     return async (dispatch: any) => {
         const putUserRoles = async () => {
@@ -47,7 +46,7 @@ export const setUserRoles = (headers: any) => {
     };
 };
 
-export const removeUserRole = ( headers: any, email:string, key:string) => {
+export const removeUserRole = (headers: any, email: string, key: string) => {
     return async (dispatch: any) => {
         const deleteUserRole = async () => {
             const response = await axios.delete(
@@ -55,25 +54,25 @@ export const removeUserRole = ( headers: any, email:string, key:string) => {
                 {
                     headers: headers
                 });
-                return response.data
+            return response.data
         };
 
-        console.log('Role removed', {key})
+        console.log('Role removed', { key })
 
         dispatch(userRoleActions.setLoading(true));
         try {
             const userRoleResponse = await deleteUserRole();
-           dispatch(loadEmployee(headers, email))
-            
+            dispatch(loadEmployee(headers, email))
+
         } catch (error: any) {
             dispatch(userRoleActions.setErrorMessage(`Employees: ${error.message}`));
         } finally {
             dispatch(userRoleActions.setLoading(false));
         }
     };
-}; 
+};
 
-export const addUserRole = ( headers: any, email:string, key:string) => {
+export const addUserRole = (headers: any, email: string, key: string) => {
     return async (dispatch: any) => {
         const addUserRole = async () => {
             const response = await axios.put(
@@ -84,16 +83,43 @@ export const addUserRole = ( headers: any, email:string, key:string) => {
                 {
                     headers: headers
                 });
-                return response.data
+            return response.data
         };
 
-        console.log('Role added', {key})
+        console.log('Role added', { key })
 
         dispatch(userRoleActions.setLoading(true));
         try {
             const userRoleResponse = await addUserRole();
-           dispatch(loadEmployee(headers, email))
-            
+            dispatch(loadEmployee(headers, email))
+
+        } catch (error: any) {
+            dispatch(userRoleActions.setErrorMessage(`Employees: ${error.message}`));
+        } finally {
+            dispatch(userRoleActions.setLoading(false));
+        }
+    };
+};
+
+export const patchRole = (headers: any, email: string, key: {active?:boolean, visible?:boolean, locked?:boolean}) => {
+    return async (dispatch: any) => {
+        const editLocked = async () => {
+            const response = await axios.patch(
+            `${window._env_?.EMPLOYEE_SERVICE_EXTERNAL_URL}/api/v1/employees/${email}`,
+                {...key},
+                {
+                    headers: headers
+                });
+            return response.data
+        };
+
+        console.log('Active changed', { key })
+
+        dispatch(userRoleActions.setLoading(true));
+        try {
+            const userRoleResponse = await editLocked();
+            dispatch(loadEmployee(headers, email))
+
         } catch (error: any) {
             dispatch(userRoleActions.setErrorMessage(`Employees: ${error.message}`));
         } finally {
@@ -101,23 +127,3 @@ export const addUserRole = ( headers: any, email:string, key:string) => {
         }
     };
 }; 
-/* export const deleteUserRoles = (headers: any, key: number) => {
-    return async (dispatch: any, getState: any) => {
-        const deleteUserRoles = async () => {
-            const response = await axios.delete(
-                    `${window._env_?.MISSIONASSIGNMENTS_SERVICE_EXTERNAL_URL}/api/v1/employees/ddhubadmin@dialogdata.de/groups/sales-manager`,
-                    {
-                        headers: headers
-                    });
-            return response.data;
-        };
-        dispatch(userRoleActions.setLoading(true));
-        try {
-            await deleteUserRoles();
-        } catch (error:any) {
-            dispatch(userRoleActions.setErrorMessage(`Missionassignment Service: ${error.message}`));
-        } finally {
-            dispatch(userRoleActions.setLoading(false));
-        }
-    };
-}; */

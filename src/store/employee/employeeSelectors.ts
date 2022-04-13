@@ -16,3 +16,4 @@ export const selectIsEmployeesErrorMessage = (state: RootState): string | null =
 export const selectSelectedEmployee = (state: RootState): Employee | undefined => {
     return state.employeeState.selectedEmployee;
 };
+

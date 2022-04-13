@@ -1,7 +1,5 @@
-import './Sidebar.css'
 import { slide as Menu } from "react-burger-menu"
-
-
+import './Sidebar.css'
 
 const Sidebar = (props: any) => {
 
@@ -15,14 +13,8 @@ const Sidebar = (props: any) => {
                 <a className="menu-item" href="/employees">
                     Employees
                 </a>
-
-                <a className="menu-item" href="#server">
-                    Server
-                </a>
             </Menu>
-
         </>
-
     );
 };
 

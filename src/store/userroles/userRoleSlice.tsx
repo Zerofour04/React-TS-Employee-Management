@@ -1,7 +1,6 @@
 import {createSlice} from '@reduxjs/toolkit';
 import { UserRoleState} from './userRoleModels';
 
-
 const initialState: UserRoleState = {
     requestState: {
         isLoading: false,

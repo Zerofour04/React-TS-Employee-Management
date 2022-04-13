@@ -1,7 +1,6 @@
 import axios from 'axios';
 import {loginActions} from '../index';
 
-
 export const login = (headers: any, email: string) => {
     return async (dispatch: any) => {
         const fetchLoggedInUser = async () => {

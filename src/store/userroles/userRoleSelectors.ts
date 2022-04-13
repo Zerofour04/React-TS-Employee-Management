@@ -4,7 +4,7 @@ export const selectIsLoginLoading = (state: RootState): boolean => {
     return state.userRoleState.requestState.isLoading;
 };
 
-export const selectLoginErrorMessage = (state: RootState): string | null => {
+export const selectUserRoleErrorMessage = (state: RootState): string | null => {
     return state.userRoleState.requestState.errorMessage;
 };
 

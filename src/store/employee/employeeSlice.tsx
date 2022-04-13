@@ -34,8 +34,10 @@ const employeeSlice = createSlice({
             employeeFound.sort((a: Employee, b: Employee) => a.email.localeCompare(b.email))
             state.employees = employeeFound;
             if (state.selectedEmployee?.email === employee.email) { state.selectedEmployee = employee }
+        },
+        setEmployeeActive(state, action) {
+            state.selectedEmployee = action.payload;
         }
-
     }
 });
 

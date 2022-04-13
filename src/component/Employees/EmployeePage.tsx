@@ -1,6 +1,5 @@
 import { useState } from "react";
 import EmployeeList from "./EmployeeList";
-import { TextField } from "@mui/material";
 
 const EmployeePage = () => {
     const [inputText, setInputText] = useState("")
@@ -9,14 +8,7 @@ const EmployeePage = () => {
         setInputText(lowerCase)
     }
     return (
-        <div>
-            <TextField
-                id="outlined-basic"
-                onChange={inputHandler}
-                variant="outlined"
-                fullWidth
-                label="Search"
-            />
+        <div className="employee-page">
             <EmployeeList input={inputText} />
         </div>
     )

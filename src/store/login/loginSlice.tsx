@@ -1,7 +1,6 @@
 import {createSlice} from '@reduxjs/toolkit';
 import {LoginState} from './loginModels';
 
-
 const initialState: LoginState = {
     requestState: {
         isLoading: false,

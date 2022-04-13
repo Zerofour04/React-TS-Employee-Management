@@ -7,28 +7,31 @@ import { useWebservice } from "../../hooks/useWebservice";
 import { loadEmployees } from "../../store/employee/employeeActions";
 import { Employee } from "../../store/employee/employeeModels";
 import { employeeActions } from "../../store";
+import { ListItemButton, ListItemText, TextField } from "@mui/material";
 
-const EmployeeList = (props:any) => {
+const EmployeeList = (props: any) => {
     useWebservice(true, loadEmployees);
     const employees = useSelector(selectEmployees)
 
     const dispatch = useDispatch()
 
-    const debugLog = () => {
-        console.log('Test')
-    }
-
     const onSelectEmployee = (employee: Employee) => {
         dispatch(employeeActions.setSelectedEmployee(employee))
     }
 
+    const [inputText, setInputText] = useState("")
+    let inputHandler = (e:any) => {
+        var lowerCase = e.target.value.toLowerCase()
+        setInputText(lowerCase)
+    }
+
     const filteredEmployee = employees.filter((el) => {
-        if (props.input === '') {
+        if (inputText === '') {
             return el;
         } else {
-            return el.acronym.toLowerCase().includes(props.input)
-            || el.fullName?.toLowerCase().includes(props.input)
-            || el.email?.toLowerCase().includes(props.input)
+            return el.acronym.toLowerCase().includes(inputText)
+                || el.fullName?.toLowerCase().includes(inputText)
+                || el.email?.toLowerCase().includes(inputText)
         }
     })
 
@@ -36,18 +39,22 @@ const EmployeeList = (props:any) => {
         <div className="employee-view">
             <div className="employees">
                 <ul className="list-group">
-
+                    <TextField
+                        id="outlined-basic"
+                        onChange={inputHandler}
+                        variant="outlined"
+                        fullWidth
+                        label="Search Employee"
+                        size="small"
+                    />
                     {filteredEmployee.map((item) =>
-
-                        <li className="list-group-item" key={item.email} onClick={(() => onSelectEmployee(item))}>
-                            <span>{item.fullName}</span>
-                        </li>
+                        <ListItemButton key={item.email} onClick={(() => onSelectEmployee(item))} component="a">
+                            <ListItemText primary={item.fullName} />
+                        </ListItemButton>
                     )}
-
                 </ul>
-
             </div>
-            <EmployeeDetails/>
+            <EmployeeDetails />
         </div>
     )
 }
