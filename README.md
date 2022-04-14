@@ -37,6 +37,27 @@ window._env_ = {
 };
 ```
 
+### ⚠️Your database must contain exactly these values, otherwise, you will have to edit something!
+```
+export interface Employee {
+    email: string;
+    firstName: string | null;
+    lastName: string | null;
+    fullName: string | null;
+    groups: string[] | null;
+    acronym: string;
+    location: {
+        countryIsocode: string;
+        regionIsocode: string
+    };
+    displayName: string;
+    active: boolean;
+    locked: boolean;
+    visible: boolean;
+}
+```
+
+
 ## 🧱Requirements
 - NPM
 - Node.js
