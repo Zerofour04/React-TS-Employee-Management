@@ -63,6 +63,7 @@ export interface Employee {
 - Node.js
 - Microsoft Account 
 - MSAL
+- Redux
 
 ## ⭐Features
 - Sidebar
