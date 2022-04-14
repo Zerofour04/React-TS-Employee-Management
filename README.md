@@ -4,6 +4,13 @@
 Hey this is an employee management list where you can manage employees by blocking them, being visible, and if they are employees.
 
 ## 🖼️Pictures
+v2.0
+![v2 0](https://user-images.githubusercontent.com/60815764/163386840-d28988b6-b940-40d5-b895-39da54b34e18.png)
+![v2 0-S](https://user-images.githubusercontent.com/60815764/163386871-3444711f-5713-4adc-9d2a-8dc502b8056d.png)
+![v2 0-3](https://user-images.githubusercontent.com/60815764/163386897-286917b3-665a-4c66-bb7f-eb43402571b4.png)
+![v2 0-2](https://user-images.githubusercontent.com/60815764/163386905-e670e35d-1cd4-4093-96e5-01040a692237.png)
+
+v1.0
 ![React Bild](https://user-images.githubusercontent.com/60815764/162760988-09275d07-3ede-42f1-bbc1-9250250d490d.png)
 
 ## 📗Installation
