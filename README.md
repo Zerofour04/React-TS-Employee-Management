@@ -1,46 +1,91 @@
-# Getting Started with Create React App
+# 🖥️React TS-Panel (Microsoft Authentication Library/MSAL) V2.0
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## ℹ️Information
+Hey this is an employee management list where you can manage employees by blocking them, being visible, and if they are employees.
 
-## Available Scripts
+## 🖼️Pictures
+![React Bild](https://user-images.githubusercontent.com/60815764/162760988-09275d07-3ede-42f1-bbc1-9250250d490d.png)
 
-In the project directory, you can run:
+## 📗Installation
+1. `cd my-app`
+2. `npm install`
+3. `npm start`
 
-### `npm start`
+## ⚙️Configuration
+`/src/config/msalConfig.ts`
+```
+export const msalConfiguration: Configuration = {
+    auth: {
+        clientId: '',
+        authority: ''
+    }
+};
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+`/public/env-config.js`
+```
+window._env_ = {
+    MISSIONASSIGNMENTS_SERVICE_EXTERNAL_URL: '',
+    EMPLOYEE_SERVICE_EXTERNAL_URL: ''    
+};
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🧱Requirements
+- NPM
+- Node.js
+- Microsoft Account 
+- MSAL
 
-### `npm test`
+## ⭐Features
+- Sidebar
+- LogOut Feature
+- Navigation
+- Employee list
+- Searchbar
+- Select individual employees
+- Employee management
+- Role management
+- Change Visible
+- Change Blocking
+- Change ActiveEmployee?
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🔧Changlogs
+### v2.0
+- Integrated Employee-Locked, Employee-Visible, Employee-Locked and Employee-Active functions
+- BugFixes
+- Codecleanup
+- Design changed
 
-### `npm run build`
+### v1.8
+- Roles can be removed/added
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### v1.6
+- Integrated select Employee and Sidebar
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### v1.2
+- Pre-release
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### v1.0
+- Added Sidebar
+- Added Navigation
+- Reworked LogOut
+- Fixed some bugs
 
-### `npm run eject`
+### v0.8
+- Updated Header
+- Added Dropdown menu
+- Changed design
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### v0.5
+- Reworked the repo
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### v0.4
+- Fixed LogOut
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### v0.3
+- Created header
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### v0.2
+- Integrated MSAL
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
