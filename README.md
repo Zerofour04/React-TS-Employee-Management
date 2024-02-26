@@ -4,6 +4,9 @@
 Hey this is an employee management list where you can manage employees by blocking them, being visible, and if they are employees.
 
 ## 🖼️Pictures
+
+![FotoJet (1)](https://github.com/Zerofour04/React-TS-Employee-Management/assets/60815764/14cbf59a-de44-432c-8597-31a28239afd3)
+
 <details>
 <summary>v2.0</summary>
     
