@@ -1,11 +1,30 @@
-# 🖥️React TS-Panel (Microsoft Authentication Library/MSAL) V2.0
+<h1 align="center">🖥️React-TS-Employee-Management)</h1>
 
 ## ℹ️Information
-Hey this is an employee management list where you can manage employees by blocking them, being visible, and if they are employees.
+- Hey, this project was developed during my internship for a company. Essentially, it aims to represent an employee list that can only be accessed via MSAL authentication. This panel features various functions such as employee locking, invisibility toggling, grouping assignment, and the ability to specify vacation times.
+- To this day, the company actively utilizes this system, providing a centralized and user-friendly solution to enhance teamwork and efficiently manage tasks.
+- Thanks to everyone on the team who assisted me. The project is still being used by the company and is intended to be online on GitHub for learning purposes, accessible only to me.
+
+## ⭐Features
+- Sidebar
+- Logout Feature
+- Navigation
+- Employee list
+- Search bar
+- Select individual employees
+- Employee management
+- Role management
+- Change Visible
+- Change Blocking
+- Change ActiveEmployee?
 
 ## 🖼️Pictures
-
+<details>
+<summary>How it looks today and further developed</summary>
+    
 ![FotoJet (1)](https://github.com/Zerofour04/React-TS-Employee-Management/assets/60815764/14cbf59a-de44-432c-8597-31a28239afd3)
+    
+</details>
 
 <details>
 <summary>v2.0</summary>
@@ -33,7 +52,13 @@ Hey this is an employee management list where you can manage employees by blocki
 2. `npm install`
 3. `npm start`
 
-## ⚙️Configuration
+## 🧱Requirements & ⚙️Configuration
+- NPM
+- Node.js
+- Microsoft Account 
+- MSAL
+- Redux
+
 `/src/config/msalConfig.ts`
 ```
 export const msalConfiguration: Configuration = {
@@ -71,27 +96,6 @@ export interface Employee {
     visible: boolean;
 }
 ```
-
-
-## 🧱Requirements
-- NPM
-- Node.js
-- Microsoft Account 
-- MSAL
-- Redux
-
-## ⭐Features
-- Sidebar
-- LogOut Feature
-- Navigation
-- Employee list
-- Searchbar
-- Select individual employees
-- Employee management
-- Role management
-- Change Visible
-- Change Blocking
-- Change ActiveEmployee?
 
 ## 🔧Changlogs
 
